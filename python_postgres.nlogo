@@ -1,7 +1,16 @@
 extensions [
-  py ; extension de python para testear
+  py ; python extension for netlogo
 ]
 
+to conection
+  py:setup py:python3
+  (py:run
+    "import connector"
+    "con = connector.Connector()"
+    "con.insert(\"insert into example2 (id, nombre, apellido) VALUES (18, 'carlos', 'LOZA');\");"
+    "con.close()"
+  )
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
@@ -33,13 +42,16 @@ ticks
 @#$#@#$#@
 ## WHAT IS IT?
 
-This is a test to try to connect netlogo with postgresql throught python
+This is a test to try to connect netlogo with postgresql through python
 
 ## Requeriments
 
 For run this project you need to install:
 
-1. psycopg2: This python plugin help to connect python with postgresql
+1. **virtualenv**To run this project you must to have install _virtualenv_. More information [here](https://virtualenv.pypa.io/en/latest/)
+
+2. **psycopg2:** 
+	This python plugin help to connect python with postgresql
 
 	With pip:
 
@@ -50,13 +62,15 @@ For run this project you need to install:
 	More information [here](https://pypi.org/project/psycopg2/)
 
 
-2. sbt: It's a build tool for scala, java an more. Is necessary that you have installing Java 1.8 or later.
+3. **sbt:** It's a build tool for scala, java an more. Is necessary that you have installing Java 1.8 or later.
 
 	More information [here](https://www.scala-sbt.org/index.html)
 
-3. python extension: It's a netlogo extension to connect netlogo with python. Please follow the steps that are describe there.
+4. **python extension:** It's a netlogo extension to connect netlogo with python. Please follow the steps that are describe there.
 
 	More information [here](https://github.com/NetLogo/PythonExtension)
+
+5. **configparser** It's an anaconda library. If you want to install it you could use anaconda navigator in the section environment and in the search field put something as _configparser_.
 
 ## HOW IT WORKS
 
@@ -88,7 +102,7 @@ For run this project you need to install:
 
 ## CREDITS AND REFERENCES
 
-(a reference to the model's URL on the web if it has one, as well as any other necessary credits, citations, and links)
+* [PostgresSQL python: Connect to PostgreSQL database server](http://www.postgresqltutorial.com/postgresql-python/connect/)
 @#$#@#$#@
 default
 true
