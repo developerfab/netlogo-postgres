@@ -74,27 +74,43 @@ For run this project you need to install:
 
 ## HOW IT WORKS
 
-(what rules the agents use to create the overall behavior of the model)
+This applitacion can insert data in postgres through python using the python extension. I created a python configuration with multiple files achieving connect python with postgres. 
 
 ## HOW TO USE IT
 
-(how to use the model, including a description of each of the items in the Interface tab)
+1. If you are using virtualenv or an anaconda environment you first should power on the environment. Remember that that environment should be configured in python 3.
 
-## THINGS TO NOTICE
+2. Please run the command `pip install -r requeriments.txt` 
+3. Please download `python extension` and configured like the author describe.
+4. Run netlogo from environment. For example, in mac you could run this command:
+	```bash
+	open /Applications/NetLogo\ 6.0.3/NetLogo\ 6.0.3.app/
+	```
+5. Inside in netlogo, in the command line you could run this instruction:
 
-(suggested things for the user to notice while running the model)
+	```
+	> conection
+	```
+
+	And you should see something like:
+
+	```
+	observer> conection
+	[('host', 'localhost'), ('database', 'netlogo'), ('user', 'postgres'), ('password', 'your_password_postgresql')]
+	Conectando con postgres ...
+	Versión de Postgresql:
+	('PostgreSQL 9.4.10 on x86_64-apple-darwin, compiled by i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 	2336.11.00), 64-bit',)
+	Conexion cerrada
+	```
+6. If you want to send an especific instruction you can change the 10 line in this project. Also I adde in `connection.py` to the function `insert()` a `COMMIT` by default. You can change it if you preffer. 
 
 ## THINGS TO TRY
 
-(suggested things for the user to try to do (move sliders, switches, etc.) with the model)
+Try to change the line 10 in this project. Also you could change the connection file.
 
 ## EXTENDING THE MODEL
 
-(suggested things to add or change in the Code tab to make the model more complicated, detailed, accurate, etc.)
-
-## NETLOGO FEATURES
-
-(interesting or unusual features of NetLogo that the model uses, particularly in the Code tab; or where workarounds were needed for missing features)
+If you have ideas about how this works, I receive suggestions to better this project.
 
 ## RELATED MODELS
 
